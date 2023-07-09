@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="{% static 'js/manifest.json' %}">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
 
     <script>
@@ -439,8 +439,8 @@
                 <h3>What are you waiting for?</h3>
                 <p>We would greatly appreciate if you could RSVP before 1st of November '17</p>
                 <form id="rsvp-form" class="rsvp-form"
-                      action=""
-                      method="POST">
+                methode ="POST">   
+                     {% csrf_token %}  
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
@@ -457,7 +457,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    {% comment %} <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
@@ -474,7 +474,7 @@
                                                                 required>
                             </div>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
@@ -482,12 +482,12 @@
                         Yes,
                         that's me!
                     </button>
-                </form>
+                
             </div>
         </div>
     </div>
+   
 </section>
-
 <footer>
     <div class="container">
         <div class="row">
